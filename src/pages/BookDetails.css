@@ -1,0 +1,48 @@
+.book-page {
+  /* background-color: red; */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.book-info-section {
+  /* background-color: green; */
+}
+
+.book {
+  /* background-color: blue; */
+}
+
+.book img {
+  height: 380px;
+}
+
+.book-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.btn {
+  margin: 1.1rem 0 0 1.1rem;
+  width: 80px;
+}
+
+.mod-btns {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.up-btn {
+  width: 120px;
+  /* background-color: red; */
+}
+.del-btn {
+  width: 120px;
+  background-color: red;
+}
+.del-btn:hover {
+  background-color: red;
+  opacity: 0.8;
+}

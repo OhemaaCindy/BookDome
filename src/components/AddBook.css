@@ -1,0 +1,45 @@
+.addform-body {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  height: 500px;
+}
+
+.book-form {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  width: 300px;
+  border: 1px solid #eee;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+label {
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+input {
+  padding: 0.9rem;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+}
+button {
+  width: 100%;
+  padding: 1rem 0;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
