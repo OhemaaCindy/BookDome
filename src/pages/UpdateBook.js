@@ -4,10 +4,13 @@ import "../components/AddBook.css";
 
 import { useState } from "react";
 import { updateBook } from "../utilities/axios";
+import useFetchBook from "../hook/useFetchBook";
 
 const UpdateBook = () => {
   const { bookId } = useParams();
   const navigate = useNavigate();
+
+  const { book: Book, loading, error } = useFetchBook(bookId);
 
   const [book, setBook] = useState({
     title: "",
@@ -30,9 +33,17 @@ const UpdateBook = () => {
 
     try {
       // Simulate a network request
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      // await new Promise((resolve) => setTimeout(resolve, 2000));
 
-      await updateBook(bookId, book);
+      const updatedBook = {
+        ...book,
+        title: book.title || Book.title,
+        author: book.author || Book.author,
+        coverImage: book.coverImage || Book.coverImage,
+      };
+      console.log({ updatedBook });
+
+      await updateBook(bookId, updatedBook);
 
       setBook({ title: "", author: "", coverImage: "" });
       navigate(-1);
@@ -47,6 +58,10 @@ const UpdateBook = () => {
   const handleGoBack = () => {
     navigate("/dashboard/books");
   };
+
+  if (loading) return <div>Loading Book...</div>;
+  if (error) return <div>Error: {error}</div>;
+  if (!book) return <div>No book found</div>;
 
   return (
     <div className="up-bk">
@@ -67,8 +82,8 @@ const UpdateBook = () => {
                 name="title"
                 value={book.title}
                 onChange={handleChange}
-                required
-                placeholder="book title here"
+                // required
+                placeholder={Book.title || "book title here"}
               />
             </div>
             <div className="form-group">
@@ -79,8 +94,8 @@ const UpdateBook = () => {
                 name="author"
                 value={book.author}
                 onChange={handleChange}
-                required
-                placeholder="author of the book"
+                // required
+                placeholder={Book.author || "author of the book"}
               />
             </div>
             <div className="form-group">
@@ -91,8 +106,8 @@ const UpdateBook = () => {
                 name="coverImage"
                 value={book.coverImage}
                 onChange={handleChange}
-                required
-                placeholder="thumbnail of the book"
+                // required
+                placeholder={Book.coverImage || "thumbnail of the book"}
               />
             </div>
 

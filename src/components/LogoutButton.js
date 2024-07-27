@@ -14,10 +14,10 @@ const LogoutButton = () => {
     localStorage.removeItem("token");
     logout();
 
-    setTimeout(() => {
-      navigate("/login");
-      setIsLoggingOut(false);
-    }, 1000);
+    // await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    navigate("/login");
+    setIsLoggingOut(false);
   };
 
   return (

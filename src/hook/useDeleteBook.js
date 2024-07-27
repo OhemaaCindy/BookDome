@@ -11,7 +11,7 @@ const useDeleteBook = () => {
 
     try {
       // Simulate a network request
-      await new Promise((resolve) => setTimeout(resolve, 1000));
+      // await new Promise((resolve) => setTimeout(resolve, 2000));
 
       const res = await deleteBook(id);
       return res;

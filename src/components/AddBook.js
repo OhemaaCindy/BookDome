@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import "./AddBook.css";
 import { addBook } from "../utilities/axios";
+import { useNavigate } from "react-router-dom";
 
 const BookPostForm = () => {
+  const navigate = useNavigate();
   const [book, setBook] = useState({
     title: "",
     author: "",
@@ -24,11 +26,13 @@ const BookPostForm = () => {
 
     try {
       // Simulate a network request
-      await new Promise((resolve) => setTimeout(resolve, 2000));
+      // await new Promise((resolve) => setTimeout(resolve, 2000));
 
       await addBook(book);
 
       setBook({ title: "", author: "", coverImage: "" });
+
+      navigate(-1);
       // alert("Book added successfully!");
     } catch (error) {
       console.error("Error posting book:", error);
