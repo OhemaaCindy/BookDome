@@ -9,7 +9,7 @@ function BookDetails() {
   const navigate = useNavigate();
 
   const { book, loading, error } = useFetchBook(bookId);
-  const { deleteSingleBook, isDeleting, error: DelError } = useDeleteBook();
+  const { deleteSingleBook, isDeleting } = useDeleteBook();
 
   if (loading) return <div>Loading...</div>;
   if (error) return <div>Error: {error}</div>;
