@@ -1,10 +1,11 @@
 .others {
   flex: 1;
-  display: flex;
   padding: 2rem;
-  gap: 2rem;
-  flex-wrap: wrap;
-  /* background-color: green; */
+  /* background-color: aqua; */
+}
+
+.books-body {
+  /* background-color: blue; */
 }
 
 .grid-container {
@@ -30,4 +31,14 @@
 
 .link {
   text-decoration: none;
+}
+
+.search-input {
+  width: 40%;
+  padding: 10px;
+  margin-bottom: 20px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin: 2rem 0 4rem 0;
 }

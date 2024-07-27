@@ -28,12 +28,12 @@ function Header() {
         />
         <p className="username">{user.username}</p>
       </div>
-      <div className="search-section">
+      {/* <div className="search-section">
         <div className="search-bar">
           <input type="text" placeholder="Search courses" />
           <button>🔍</button>
         </div>
-      </div>
+      </div> */}
 
       <div className="logoutBtn">
         <button onClick={logout}>Logout</button>

@@ -41,7 +41,7 @@ const UpdateBook = () => {
         author: book.author || Book.author,
         coverImage: book.coverImage || Book.coverImage,
       };
-      console.log({ updatedBook });
+      // console.log({ updatedBook });
 
       await updateBook(bookId, updatedBook);
 
